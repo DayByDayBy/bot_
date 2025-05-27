@@ -3,9 +3,7 @@ from api_etc.api_handler import post_reply, get_posts
 import random
 
 def compose_reply(word):
-    
-    rando = random.choice(0,5)
-    
+
     variations = {
         0: 'define ',
         1: 'first define ',
@@ -13,6 +11,20 @@ def compose_reply(word):
         3: 'how are you defining ',
         4: 'that depends on your definition of '
     }
-    return variations[rando] + word
+    rando = random.choice(list(variations.keys()))
+    return variations[rando] +f'"{word}"'
+
+
+def main():
+    api = None
+    posts = get_posts(api)
+    for post in posts:
+        word = word_selection(post['text'])
+        
+        if word:
+            reply = compose_reply(word)
+            post_reply(api, post['id'], reply)
     
- 
+if __name__ == "__main__":
+    main() 
+
