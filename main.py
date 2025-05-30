@@ -1,4 +1,4 @@
-from words_etc import word_selection
+from api_etc import word_selection
 from api_etc.api_handler import post_reply, get_posts
 import random
 
