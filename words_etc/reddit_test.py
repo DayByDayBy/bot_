@@ -3,7 +3,7 @@ from unittest.mock import Mock, patch, MagicMock
 import json
 import os
 import tempfile
-from reddit_mono import SafeRedditBot
+from ..api_etc.reddit_mono import SafeRedditBot
 
 
 # never sure about the exact value of testing, but it def makes more sense when there are 

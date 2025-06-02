@@ -7,6 +7,9 @@ from textblob import TextBlob  # sentiment analysis lib, still on the fence abou
 import time
 
 
+import os
+print(os.path.abspath(__file__))
+
 class SafeRedditBot:
     def __init__(self, client_id, client_secret, username, password):
         self.reddit = praw.Reddit(
